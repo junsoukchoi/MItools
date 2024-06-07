@@ -3,8 +3,8 @@
 #' Calculates an estimate of the cross-type L-function for a multitype point pattern.
 #'
 #' @param X The observed point pattern, from which an estimate of the cross-type \eqn{L} function \eqn{L_{ij}(r)} will be computed. It must be a multitype point pattern (a marked point pattern whose marks are a factor).
-#' @param i The type (mark value) of the points in X from which distances are measured. A character string (or something that will be converted to a character string).
-#' @param j The type (mark value) of the points in X to which distances are measured. A character string (or something that will be converted to a character string).
+#' @param i The type (mark value) of the points in \code{X} from which distances are measured. A character string (or something that will be converted to a character string).
+#' @param j The type (mark value) of the points in \code{X} to which distances are measured. A character string (or something that will be converted to a character string).
 #' @param r numeric vector. The values of the argument \eqn{r} at which the function \eqn{L_{ij}(r)} should be evaluated. There is a sensible default. First-time users are strongly advised not to specify this argument.
 #' @param correction A character vector containing any selection of the options \code{"border", "bord.modif", "isotropic", "Ripley", "translate", "translation", "periodic", "none"} or \code{"best"}. It specifies the edge correction(s) to be applied. Alternatively \code{correction="all"} selects all options.
 #'
