@@ -1,0 +1,23 @@
+---
+title: "MItools"
+
+output: 
+  github_document:
+        toc: true
+        toc_depth: 4
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+The R package `MItools` provides a collection of standard spatial statistics tools for analyzing multiplexed imaging data.
+
+## Installation
+
+To install the latest version from Github, use
+
+```{r install, tidy = 'formatR', eval = FALSE, echo = TRUE}
+library(devtools)
+devtools::install_github("junsoukchoi/ZiGDAG")
+```
