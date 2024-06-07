@@ -20,6 +20,5 @@
 #' @examples
 Lcross = function(X, i, j, r=NULL, correction)
 {
-   out = spatstat.explore::Lcross(X = X, i = i, j = j, r, correction = correction)
-   return(out)
+   return(spatstat.explore::Lcross(X = X, i = i, j = j, r, correction = correction))
 }
