@@ -12,6 +12,7 @@
 #'
 #' Essentially a data frame containing columns
 #' \item{r}{the values of the argument \eqn{r} at which the function \eqn{K_{ij}(r)} has been estimated}
+#' \item{un}{the uncorrected estimate of \eqn{K_{ij}(r)}}
 #' \item{theo}{the theoretical value \eqn{K_{ij}(r)=r} for a stationary Poisson process, namely \eqn{\pi r^2}}
 #' together with columns named \code{"border"}, \code{"bord.modif"}, \code{"iso"} and/or \code{"trans"}, according to the selected edge corrections. These columns contain estimates of the function \eqn{K_{ij}(r)} obtained by the edge corrections named.
 #'
