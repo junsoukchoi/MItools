@@ -17,5 +17,5 @@
 #' @examples
 multitype.pp = function(x, y, marks, xrange = c(min(x), max(x)), yrange = c(min(y), max(y)), poly=NULL, unitname=NULL)
 {
-   return(spatstat.geom::ppp(x = x, y = y, xrange = xrange, yrange = yrange, poly = poly, unitname = unitname, marks = marks))
+   return(spatstat.geom::ppp(x = x, y = y, xrange = xrange, yrange = yrange, poly = poly, unitname = unitname, marks = factor(marks)))
 }

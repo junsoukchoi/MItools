@@ -3,4 +3,5 @@
 export(Gcross)
 export(Kcross)
 export(Lcross)
+export(multitype.pp)
 export(pcfcross)
