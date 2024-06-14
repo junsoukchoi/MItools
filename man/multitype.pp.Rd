@@ -30,7 +30,7 @@ multitype.pp(
 \item{unitname}{Optional. Name of unit of length. Either a single character string, or a vector of two character strings giving the singular and plural forms, respectively.}
 }
 \value{
-An object of class "ppp" describing a multittype point pattern in the two-dimensional plane
+An object of class "ppp" describing a multittype point pattern in the two-dimensional plane.
 }
 \description{
 Creates an object of class "ppp" representing a multitype point pattern dataset in the two-dimensional plane.

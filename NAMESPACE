@@ -3,5 +3,6 @@
 export(Gcross)
 export(Kcross)
 export(Lcross)
+export(envelope)
 export(multitype.pp)
 export(pcfcross)

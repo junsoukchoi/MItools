@@ -18,7 +18,7 @@
 #' \item{hi}{upper envelope of simulations}
 #' \item{theo}{the theoretical value \eqn{g_{ij}(r) = 1} for independent marks}
 #' and either
-#' \item{theo}{heoretical value of the summary function under CSR (Complete Spatial Randomness, a uniform Poisson point process) if the simulations were generated according to CSR}
+#' \item{theo}{theoretical value of the summary function under CSR (Complete Spatial Randomness, a uniform Poisson point process) if the simulations were generated according to CSR}
 #' \item{mmean}{testimated theoretical value of the summary function, computed by averaging simulated values, if the simulations were not generated according to CSR.}
 #'
 #' @export
