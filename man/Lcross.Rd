@@ -29,3 +29,27 @@ together with columns named \code{"border"}, \code{"bord.modif"}, \code{"iso"} a
 \description{
 Calculates an estimate of the cross-type L-function for a multitype point pattern.
 }
+\examples{
+# load pre-processed lung cancer data
+load(url("https://github.com/julia-wrobel/MI_tutorial/raw/main/Data/lung.RDA"))
+
+# randomly select a lung cancer image and define cell types
+library(dplyr)
+subj_df = filter(lung_df, image_id == "#73 6-333-711_[44841,18646].im3")
+subj_df = subj_df \%>\%
+   mutate(phenotype = case_when(
+      phenotype_cd19 == "CD19+" ~ "CD19+ B-cell",
+      phenotype_cd14 == "CD14+" ~ "CD14+ cell",
+      phenotype_cd8 == "CD8+" ~ "CD8+ T-cell",
+      phenotype_cd4 == "CD4+" ~ "CD4+ T-cell",
+      phenotype_ck  == "CK+" ~ "CK+ cancer cell",
+      TRUE ~ "Other"
+   ))
+
+# convert the selected lung cancer image into the object of class "ppp" representing a multitype point pattern
+pp_lung = multitype.pp(subj_df$x, subj_df$y, subj_df$phenotype)
+
+# calculate estimates of the L-cross function between CD19+ B-cell and CD14+ cell
+L = Lcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
+plot(L, main = "L-cross")
+}
