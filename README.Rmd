@@ -19,7 +19,7 @@ To install the latest version from Github, use
 
 ```{r install, tidy = 'formatR', eval = FALSE, echo = TRUE}
 library(devtools)
-devtools::install_github("junsoukchoi/ZiGDAG")
+devtools::install_github("junsoukchoi/MItools")
 ```
 
 ## Example for multitype.pp

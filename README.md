@@ -18,7 +18,7 @@ To install the latest version from Github, use
 
 ``` r
 library(devtools)
-devtools::install_github("junsoukchoi/ZiGDAG")
+devtools::install_github("junsoukchoi/MItools")
 ```
 
 ## Example for multitype.pp
