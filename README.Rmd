@@ -21,3 +21,72 @@ To install the latest version from Github, use
 library(devtools)
 devtools::install_github("junsoukchoi/ZiGDAG")
 ```
+
+## Example for multitype.pp
+
+```{r example_multitype.pp, eval = TRUE, echo = TRUE, message = FALSE, fig.dim = c(10, 8)}
+library(MItools)
+
+# load pre-processed lung cancer data
+load(url("https://github.com/julia-wrobel/MI_tutorial/raw/main/Data/lung.RDA"))
+
+# randomly select a lung cancer image and define cell types
+library(dplyr)
+subj_df = filter(lung_df, image_id == "#73 6-333-711_[44841,18646].im3")
+subj_df = subj_df %>%
+   mutate(phenotype = case_when(
+      phenotype_cd19 == "CD19+" ~ "CD19+ B-cell",
+      phenotype_cd14 == "CD14+" ~ "CD14+ cell",
+      phenotype_cd8 == "CD8+" ~ "CD8+ T-cell",
+      phenotype_cd4 == "CD4+" ~ "CD4+ T-cell",
+      phenotype_ck  == "CK+" ~ "CK+ cancer cell",
+      TRUE ~ "Other"
+   ))
+
+# convert the selected lung cancer image into the object of class "ppp" representing a multitype point pattern
+pp_lung = multitype.pp(subj_df$x, subj_df$y, subj_df$phenotype)
+
+# plot the multitype point pattern
+plot(pp_lung, main = "Lung cancer image", cols = 2 : 7)
+```
+
+## Example for Kcross
+
+```{r example_Kcross, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the K-cross function between CD19+ B-cell and CD14+ cell
+K = Kcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
+plot(K, main = "K-cross")
+```
+
+## Example for Lcross
+
+```{r example_Lcross, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the L-cross function between CD19+ B-cell and CD14+ cell
+L = Lcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
+plot(L, main = "L-cross")
+```
+
+## Example for pcfcross
+
+```{r example_pcfcross, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the cross-type pair correlation function between CD19+ B-cell and CD14+ cell
+g = pcfcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
+plot(g, main = "cross-type pair correlation")
+```
+
+## Example for Gcross
+
+```{r example_Gcross, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the G-cross function between CD19+ B-cell and CD14+ cell
+G = Gcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
+plot(G, main = "G-cross")
+```
+
+## Example for envelope
+
+```{r example_envelope, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# compute envelopes of the K-cross function between CD19+ B-cell and CD14+ cell under CSR
+envelope_K = envelope(pp_lung, Kcross, funargs = list(i = "CD19+ B-cell", j = "CD14+ cell", correction = "none"))
+plot(envelope_K, main = "Envelopes of the K-cross function")
+summary(envelope_K)
+```
