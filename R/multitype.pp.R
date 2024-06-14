@@ -10,7 +10,7 @@
 #' @param poly Optional. Polygonal boundary of window. Incompatible
 #' @param unitname Optional. Name of unit of length. Either a single character string, or a vector of two character strings giving the singular and plural forms, respectively.
 #'
-#' @return An object of class "ppp" describing a multittype point pattern in the two-dimensional plane
+#' @return An object of class "ppp" describing a multittype point pattern in the two-dimensional plane.
 #'
 #' @export
 #'
