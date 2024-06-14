@@ -24,7 +24,7 @@ devtools::install_github("junsoukchoi/ZiGDAG")
 
 ## Example for multitype.pp
 
-```{r example_multitype.pp, eval = TRUE, echo = TRUE, message = FALSE, fig.dim = c(10, 8)}
+```{r example_multitype.pp, eval = TRUE, echo = TRUE, message = FALSE, fig.dim = c(8, 6)}
 library(MItools)
 
 # load pre-processed lung cancer data
