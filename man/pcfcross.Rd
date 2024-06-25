@@ -4,7 +4,7 @@
 \alias{pcfcross}
 \title{Multitype pair correlation function (cross-type)}
 \usage{
-pcfcross(X, i, j, r = NULL, correction = c("isotropic", "Ripley", "translate"))
+pcfcross(X, i, j, r = NULL, correction = "isotropic")
 }
 \arguments{
 \item{X}{The observed point pattern, from which an estimate of the cross-type pair correlation function \eqn{g_{ij}(r)} will be computed. It must be a multitype point pattern (a marked point pattern whose marks are a factor).}

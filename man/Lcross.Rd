@@ -4,7 +4,7 @@
 \alias{Lcross}
 \title{Multitype L-function (cross-type)}
 \usage{
-Lcross(X, i, j, r = NULL, correction)
+Lcross(X, i, j, r = NULL, correction = "isotropic")
 }
 \arguments{
 \item{X}{The observed point pattern, from which an estimate of the cross-type \eqn{L} function \eqn{L_{ij}(r)} will be computed. It must be a multitype point pattern (a marked point pattern whose marks are a factor).}

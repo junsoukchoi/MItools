@@ -4,7 +4,7 @@
 \alias{Gcross}
 \title{Multitype Nearest Neighbour Distance Function (i-to-j)}
 \usage{
-Gcross(X, i, j, r = NULL, correction = c("rs", "km", "han"))
+Gcross(X, i, j, r = NULL, correction = "km")
 }
 \arguments{
 \item{X}{The observed point pattern, from which an estimate of the cross type distance distribution function \eqn{G_{ij}(r)} will be computed. It must be a multitype point pattern (a marked point pattern whose marks are a factor).}

@@ -4,7 +4,7 @@
 \alias{Kcross}
 \title{Multitype K Function (Cross-type)}
 \usage{
-Kcross(X, i, j, r = NULL, correction)
+Kcross(X, i, j, r = NULL, correction = "isotropic")
 }
 \arguments{
 \item{X}{The observed point pattern, from which an estimate of the cross-type \eqn{K} function \eqn{K_{ij}(r)} will be computed. It must be a multitype point pattern (a marked point pattern whose marks are a factor).}
