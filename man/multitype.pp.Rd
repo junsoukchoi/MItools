@@ -4,15 +4,7 @@
 \alias{multitype.pp}
 \title{Create a Multitype Point Pattern}
 \usage{
-multitype.pp(
-  x,
-  y,
-  marks,
-  xrange = c(min(x), max(x)),
-  yrange = c(min(y), max(y)),
-  poly = NULL,
-  unitname = NULL
-)
+multitype.pp(x, y, marks, poly = NULL, unitname = NULL)
 }
 \arguments{
 \item{x}{Vector of \eqn{x} coordinates of data points.}
@@ -20,10 +12,6 @@ multitype.pp(
 \item{y}{Vector of \eqn{y} coordinates of data points.}
 
 \item{marks}{mark values for the points. A vector or data frame.}
-
-\item{xrange}{\eqn{x} coordinate limits of enclosing box}
-
-\item{yrange}{\eqn{y} coordinate limits of enclosing box}
 
 \item{poly}{Optional. Polygonal boundary of window. Incompatible}
 
