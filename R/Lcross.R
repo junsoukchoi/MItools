@@ -41,7 +41,7 @@
 #' # calculate estimates of the L-cross function between CD19+ B-cell and CD14+ cell
 #' L = Lcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
 #' plot(L, main = "L-cross")
-Lcross = function(X, i, j, r=NULL, correction)
+Lcross = function(X, i, j, r=NULL, correction="isotropic")
 {
    return(spatstat.explore::Lcross(X = X, i = i, j = j, r, correction = correction))
 }

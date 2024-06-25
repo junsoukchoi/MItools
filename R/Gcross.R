@@ -41,7 +41,7 @@
 #' # calculate estimates of the G-cross function between CD19+ B-cell and CD14+ cell
 #' G = Gcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
 #' plot(G, main = "G-cross")
-Gcross = function(X, i, j, r=NULL, correction=c("rs", "km", "han"))
+Gcross = function(X, i, j, r=NULL, correction="km")
 {
    return(spatstat.explore::Gcross(X = X, i = i, j = j, r = r, correction = correction))
 }

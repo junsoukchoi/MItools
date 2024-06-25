@@ -41,7 +41,7 @@
 #' # calculate estimates of the K-cross function between CD19+ B-cell and CD14+ cell
 #' K = Kcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
 #' plot(K, main = "K-cross")
-Kcross = function(X, i, j, r=NULL, correction)
+Kcross = function(X, i, j, r=NULL, correction="isotropic")
 {
    return(spatstat.explore::Kcross(X = X, i = i, j = j, r = r, correction = correction))
 }

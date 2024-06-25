@@ -40,7 +40,7 @@
 #' # calculate estimates of the cross-type pair correlation function between CD19+ B-cell and CD14+ cell
 #' g = pcfcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
 #' plot(g, main = "cross-type pair correlation")
-pcfcross = function(X, i, j, r=NULL, correction=c("isotropic", "Ripley", "translate"))
+pcfcross = function(X, i, j, r=NULL, correction="isotropic")
 {
    return(spatstat.explore::pcfcross(X = X, i = i, j = j, r = r, correction = correction))
 }
