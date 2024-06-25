@@ -4,6 +4,9 @@ MItools
 - [Installation](#installation)
 - [Example for multitype.pp](#example-for-multitypepp)
 - [Example for Kest](#example-for-kest)
+- [Example for Lest](#example-for-lest)
+- [Example for pcfest](#example-for-pcfest)
+- [Example for Gest](#example-for-gest)
 - [Example for Kcross](#example-for-kcross)
 - [Example for Lcross](#example-for-lcross)
 - [Example for pcfcross](#example-for-pcfcross)
@@ -62,10 +65,45 @@ K = Kest(pp_lung, "CD19+ B-cell", correction = "all")
     ## Warning: Periodic correction is not defined for non-rectangular windows
 
 ``` r
-plot(K, main = "K-est")
+plot(K, main = "K-function")
 ```
 
 ![](README_files/figure-gfm/example_Kest-1.png)<!-- -->
+
+## Example for Lest
+
+``` r
+# calculate estimates of the L-function for CD19+ B-cell
+L = Lest(pp_lung, "CD19+ B-cell", correction = "all")
+```
+
+    ## Warning: Periodic correction is not defined for non-rectangular windows
+
+``` r
+plot(L, main = "L-function")
+```
+
+![](README_files/figure-gfm/example_Lest-1.png)<!-- -->
+
+## Example for pcfest
+
+``` r
+# calculate estimates of the pair correlation function for CD19+ B-cell
+g = pcfest(pp_lung, "CD19+ B-cell", correction = "all")
+plot(g, main = "pair correlation")
+```
+
+![](README_files/figure-gfm/example_pcfest-1.png)<!-- -->
+
+## Example for Gest
+
+``` r
+# calculate estimates of the G-function for CD19+ B-cell
+G = Gest(pp_lung, "CD19+ B-cell", correction = "all")
+plot(G, main = "G-function")
+```
+
+![](README_files/figure-gfm/example_Gest-1.png)<!-- -->
 
 ## Example for Kcross
 

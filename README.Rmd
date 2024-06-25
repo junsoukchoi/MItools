@@ -55,7 +55,31 @@ plot(pp_lung, main = "Lung cancer image", cols = 2 : 7)
 ```{r example_Kest, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
 # calculate estimates of the K-function for CD19+ B-cell
 K = Kest(pp_lung, "CD19+ B-cell", correction = "all")
-plot(K, main = "K-est")
+plot(K, main = "K-function")
+```
+
+## Example for Lest
+
+```{r example_Lest, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the L-function for CD19+ B-cell
+L = Lest(pp_lung, "CD19+ B-cell", correction = "all")
+plot(L, main = "L-function")
+```
+
+## Example for pcfest
+
+```{r example_pcfest, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the pair correlation function for CD19+ B-cell
+g = pcfest(pp_lung, "CD19+ B-cell", correction = "all")
+plot(g, main = "pair correlation")
+```
+
+## Example for Gest
+
+```{r example_Gest, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the G-function for CD19+ B-cell
+G = Gest(pp_lung, "CD19+ B-cell", correction = "all")
+plot(G, main = "G-function")
 ```
 
 ## Example for Kcross
