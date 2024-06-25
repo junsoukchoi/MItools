@@ -2,6 +2,7 @@
 
 export(Gcross)
 export(Kcross)
+export(Kest)
 export(Lcross)
 export(envelope)
 export(multitype.pp)
