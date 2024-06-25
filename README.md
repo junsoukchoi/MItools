@@ -3,6 +3,7 @@ MItools
 
 - [Installation](#installation)
 - [Example for multitype.pp](#example-for-multitypepp)
+- [Example for Kest](#example-for-kest)
 - [Example for Kcross](#example-for-kcross)
 - [Example for Lcross](#example-for-lcross)
 - [Example for pcfcross](#example-for-pcfcross)
@@ -51,11 +52,31 @@ plot(pp_lung, main = "Lung cancer image", cols = 2 : 7)
 
 ![](README_files/figure-gfm/example_multitype.pp-1.png)<!-- -->
 
+## Example for Kest
+
+``` r
+# calculate estimates of the K-function for CD19+ B-cell
+K = Kest(pp_lung, "CD19+ B-cell", correction = "all")
+```
+
+    ## Warning: Periodic correction is not defined for non-rectangular windows
+
+``` r
+plot(K, main = "K-est")
+```
+
+![](README_files/figure-gfm/example_Kest-1.png)<!-- -->
+
 ## Example for Kcross
 
 ``` r
 # calculate estimates of the K-cross function between CD19+ B-cell and CD14+ cell
 K = Kcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
+```
+
+    ## Warning: Periodic correction is not defined for non-rectangular windows
+
+``` r
 plot(K, main = "K-cross")
 ```
 
@@ -66,6 +87,11 @@ plot(K, main = "K-cross")
 ``` r
 # calculate estimates of the L-cross function between CD19+ B-cell and CD14+ cell
 L = Lcross(pp_lung, "CD19+ B-cell", "CD14+ cell", correction = "all")
+```
+
+    ## Warning: Periodic correction is not defined for non-rectangular windows
+
+``` r
 plot(L, main = "L-cross")
 ```
 

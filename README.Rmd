@@ -50,6 +50,14 @@ pp_lung = multitype.pp(subj_df$x, subj_df$y, subj_df$phenotype)
 plot(pp_lung, main = "Lung cancer image", cols = 2 : 7)
 ```
 
+## Example for Kest
+
+```{r example_Kest, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
+# calculate estimates of the K-function for CD19+ B-cell
+K = Kest(pp_lung, "CD19+ B-cell", correction = "all")
+plot(K, main = "K-est")
+```
+
 ## Example for Kcross
 
 ```{r example_Kcross, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
