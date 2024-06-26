@@ -117,8 +117,10 @@ plot(G, main = "G-cross")
 ## Example for envelope
 
 ```{r example_envelope, eval = TRUE, echo = TRUE, fig.dim = c(10, 8)}
-# compute envelopes of the K-cross function between CD19+ B-cell and CD14+ cell under CSR
-envelope_K = envelope(pp_lung, Kcross, funargs = list(i = "CD19+ B-cell", j = "CD14+ cell", correction = "none"))
-plot(envelope_K, main = "Envelopes of the K-cross function")
+# compute permutation envelopes of the K-cross function between CD19+ B-cell and CD14+ cell under CSR
+envelope_K = permute.envelope(pp_lung, Kcross, funargs = list(i = "CD19+ B-cell", j = "CD14+ cell", correction = "isotropic"))
+plot(envelope_K, main = "Permutation envelopes of the K-cross function")
+K = Kcross(pp_lung, i = "CD19+ B-cell", j = "CD14+ cell", correction = "isotropic")
+lines(K$r, K$theo, lty = 2, col = "blue")
 summary(envelope_K)
 ```
